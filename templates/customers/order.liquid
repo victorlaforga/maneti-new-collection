@@ -1,0 +1,190 @@
+<div class="module-wrapper">
+  <div class="module order">
+    <div class="module-header order-header">
+      <div class="module-title page-title">
+        <h1>{{ 'customer.order.header' | t: order_number: order.name }}</h1>
+      </div>
+      <div class="module-subtitle">
+        <div class="logged-in-as">
+          {% capture user_email %}<a href="{{ routes.account_url }}">{{ customer.email }}</a>{% endcapture %}
+          {{ 'customer.account.logged_in_as_html' | t: user_email: user_email }} (<a href="{{ routes.account_logout_url }}">{{ 'general.general.logout' | t }}</a>)
+        </div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="module-content">
+        <div class="order-summary">
+          <div class="cart-items-container">
+            <table class="cart-items clean">
+              <thead class="cart-items-thead">
+                <tr>
+                  <th class="first">{{ 'general.general.product' | t}}</th>
+                  <th class="cart-price-header">{{ 'general.general.price' | t }}</th>
+                  <th class="cart-quantity-header">{{ 'general.general.quantity' | t }}</th>
+                  <th class="last">{{ 'general.general.total' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for line_item in order.line_items %}
+                  {%- assign item_has_discounts = false -%}
+                  {%- if line_item.line_level_discount_allocations.size > 0 -%}
+                    {%- assign item_has_discounts = true -%}
+                  {%- endif -%}
+                  <tr class="{% render 'for-looper', forloop: forloop %} cart-item {% if order.cancelled %}cancelled_order{% endif %}">
+                    <td class="cart-item-td cart-item-product">
+                      <div class="cart-item-image-container">
+                        <a class="cart-image" href="{{ line_item.product.url }}">{{ line_item.image |  product_img_url: 'small' | img_tag }}</a>
+                      </div>
+                      <div class="cart-item-product-wrap">
+                        <span class="cart-title">{{ line_item.product.title | link_to: line_item.product.url }}</span>
+                        <span class="cart-vendor vendor">{{ line_item.vendor }}</span>
+                        {% if line_item.variant.title != 'Default Title' %}
+                          <span class="cart-variant">{{ line_item.variant.title }}</span>
+                        {% endif %}
+                        {%- if item_has_discounts -%}
+                          <ul class="cart-item-discounts">
+                            {% for discount_allocation in line_item.line_level_discount_allocations %}
+                              <li>
+                                {% render 'icon-sale-tag' %}
+                                {{ discount_allocation.discount_application.title }}
+                                (-<span class="money">{{ discount_allocation.amount | money }}</span>)
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {%- endif -%}
+                      </div>
+                    </td>
+                    <td class="cart-item-td cart-item-price">
+                      <span class="show-sm cart-mobile-line-title">{{ 'general.general.price' | t }}: </span>
+                      <div class="cart-item-unit-price">
+                        {%- if item_has_discounts -%}
+                          <s class="cart-item-original-price money">{{ line_item.original_price | money }}</s>
+                        {%- endif -%}
+                        <span class="cart-item-final-price money">{{ line_item.final_price | money }}</span>
+                        {%- if item_has_discounts -%}
+                          <ul class="cart-item-discounts mobile-only">
+                            {% for discount_allocation in line_item.line_level_discount_allocations %}
+                              <li>
+                                {% render 'icon-sale-tag' %}
+                                {{ discount_allocation.discount_application.title }}<br>
+                                (-<span class="money">{{ discount_allocation.amount | money }}</span>)
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {%- endif -%}
+                        {% if line_item.unit_price_measurement %}
+                          {% capture total_quantity %}<span class="cart-item__total-quantity" data-total-quantity>{{ line_item.unit_price_measurement.quantity_value }}{{ line_item.unit_price_measurement.quantity_unit }}</span>{% endcapture %}
+                          {% capture unit_price %}<span class="cart-item__unit-price-amount" data-unit-price-amount>{{ line_item.unit_price | money }}</span>{% endcapture %}
+                          {% capture unit_measure %}<span class="cart-item__unit-price-measure" data-unit-price-measure>{%- if line_item.unit_price_measurement.reference_value != 1 -%}{{ line_item.unit_price_measurement.reference_value }}{%- endif %}{{ line_item.unit_price_measurement.reference_unit }}</span>{% endcapture %}
+
+                          <div
+                            class="cart-item__unit-price"
+                            data-unit-price
+                          >
+                            {{ 'products.product.price_per_unit_html' | t: total_quantity: total_quantity, unit_price: unit_price, unit_measure: unit_measure | strip_newlines }}
+                          </div>
+                        {% endif %}
+                      </div>
+                    </td>
+                    <td class="cart-item-td cart-item-quantity">
+                      <span class="show-sm cart-mobile-line-title">{{ 'general.general.quantity' | t }}: </span>
+                      <span>{{ line_item.quantity }}</span>
+                    </td>
+                    <td class="cart-item-td cart-item-total last">
+                      <span class="show-sm cart-mobile-line-title">{{ 'general.general.total' | t }}: </span>
+                      <div class="cart-item-total-container">
+                        {% if item_has_discounts %}
+                          <s class="cart-item-original-price money">{{ line_item.original_line_price | money }}</s>
+                        {% endif %}
+                        <span class="cart-item-final-price money">{{ line_item.final_line_price | money }}</span>
+                      </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          <table class="order-totals clean">
+            <tbody>
+              <tr class="order-subtotal">
+                <td>{{ 'general.general.subtotal' | t }}</td>
+                <td><span class="money">{{ order.line_items_subtotal_price | money }}</span></td>
+              </tr>
+              {%- for discount_application in order.cart_level_discount_applications -%}
+                <tr class="order-discount">
+                  <td class="cart-discount-title">
+                    {% render 'icon-sale-tag' %}
+                    {{- discount_application.title -}}
+                  </td>
+                  <td class="cart-discount-price">-<span class="money">{{ discount_application.total_allocated_amount | money }}</span></td>
+                </tr>
+              {%- endfor -%}
+              {% for shipping_method in order.shipping_methods %}
+                <tr class="order-shipping">
+                  <td>{{ 'customer.order.shipping' | t }}</td>
+                  <td><span class="money">{{ shipping_method.price | money }}</span></td>
+                </tr>
+              {% endfor %}
+              {% for tax_line in order.tax_lines %}
+                <tr class="order-tax">
+                  <td>{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</td>
+                  <td><span class="money">{{ tax_line.price | money }}</span></td>
+                </tr>
+              {% endfor %}
+              <tr class="order-total">
+                <td>{{ 'general.general.total' | t }}</td>
+                <td><span class="money">{{ order.total_price | money }}</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="shipping-info">
+            {% if order.shipping_address != blank %}
+              <div class="customer-address shipping-address">
+                <p><strong>{{ 'customer.order.shipping_address' | t }}</strong></p>
+                <p>
+                  <span>{{ order.shipping_address.first_name }} {{ order.shipping_address.last_name }}</span><br>
+                  {% if order.shipping_address.company.size > 0 %}
+                    <span>{{ order.shipping_address.company }}</span><br>
+                  {% endif %}
+                  {% if order.shipping_address.street.size > 0 %}
+                    <span>{{ order.shipping_address.street }}</span><br>
+                  {% endif %}
+                  {% if order.shipping_address.city.size > 0 or order.shipping_address.province_code.size > 0 %}
+                    <span>{{ order.shipping_address.city }}{% if order.shipping_address.province_code %}, {{ order.shipping_address.province_code }}{% endif %}</span><br>
+                  {% endif %}
+                  {% if order.shipping_address.country.size > 0 or order.shipping_address.zip.size > 0 %}
+                    <span>{{ order.shipping_address.country }} {{ order.shipping_address.zip }}</span><br>
+                  {% endif %}
+                  {% if order.shipping_address.phone.size > 0 %}
+                    <span>{{ order.shipping_address.phone }}</span><br>
+                  {% endif %}
+                </p>
+              </div>
+            {% endif %}
+            <div class="customer-address billing-address">
+              <p><strong>{{ 'customer.order.billing_address' | t }}</strong></p>
+              <p>
+                <span>{{ order.billing_address.first_name }} {{ order.billing_address.last_name }}</span><br>
+                {% if order.billing_address.company.size > 0 %}
+                  <span>{{ order.billing_address.company }}</span><br>
+                {% endif %}
+                {% if order.billing_address.street.size > 0 %}
+                  <span>{{ order.billing_address.street }}</span><br>
+                {% endif %}
+                {% if order.billing_address.city.size > 0 or order.billing_address.province_code.size > 0 %}
+                  <span>{{ order.billing_address.city }}{% if order.billing_address.province_code %}, {{ order.billing_address.province_code }}{% endif %}</span><br>
+                {% endif %}
+                {% if order.billing_address.country.size > 0 or order.billing_address.zip.size > 0 %}
+                  <span>{{ order.billing_address.country }} {{ order.billing_address.zip }}</span><br>
+                {% endif %}
+                {% if order.billing_address.phone.size > 0 %}
+                  <span>{{ order.billing_address.phone }}</span><br>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

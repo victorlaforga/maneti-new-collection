@@ -1,0 +1,1096 @@
+{
+  "current": {
+    "theme-primary-color": "#000000",
+    "theme-secondary-color": "#0a0909",
+    "heading-text-color": "#000000",
+    "body-text-color": "#797676",
+    "border-color": "#000000",
+    "body-background-color": "#fff",
+    "font_body": "poppins_n4",
+    "font_headings": "poppins_n4",
+    "font_buttons": "poppins_n4",
+    "featured-product-main": "maneti-houder",
+    "product_module_1": "module-product-focus",
+    "social_facebook_url": "facebook.com\/manetinl",
+    "social_instagram_url": "https:\/\/instagram.com\/maneti.nl",
+    "favicon": "shopify:\/\/shop_images\/Naamloos-3_Tekengebied_1.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/rsz_logo_zwart.png",
+    "checkout_button_color": "#ff7f50",
+    "theme-primary-color-hover": "#0288b5",
+    "sections": {
+      "static-slideshow": {
+        "type": "static-slideshow",
+        "blocks": {
+          "slide-1": {
+            "type": "slide",
+            "settings": {
+              "alignment": "left",
+              "text_style": "light",
+              "image": "shopify:\/\/shop_images\/Maneti_foto_s-43.jpg",
+              "overlay_style": "secondary",
+              "overlay_opacity": 30,
+              "title": "Super krachtig",
+              "subtitle": "Onze telefoonhouder is makkelijk overal waar je maar wilt te bevestigen!",
+              "cta": "bestel nu",
+              "url": "shopify:\/\/products\/maneti-houder"
+            }
+          },
+          "dfffdea5-3bc1-42a2-a201-d2ee60fcc911": {
+            "type": "slide",
+            "settings": {
+              "alignment": "left",
+              "text_style": "light",
+              "image": "shopify:\/\/shop_images\/Maneti_foto_s-46_277861b5-bbb5-426b-b200-9b944fb1d66d.jpg",
+              "overlay_style": "secondary",
+              "overlay_opacity": 50,
+              "title": "Kids",
+              "subtitle": "Laat je kids lekker netflixen op de achterbank met onze Maneti!",
+              "cta": ""
+            }
+          },
+          "slide-2": {
+            "type": "slide",
+            "settings": {
+              "alignment": "left",
+              "text_style": "light",
+              "image": "shopify:\/\/shop_images\/kitchen.jpg",
+              "overlay_style": "secondary",
+              "overlay_opacity": 30,
+              "title": "Koken",
+              "subtitle": "Laat je telefoon nooit meer rondslingeren tijdens het bekijken van je recept!",
+              "cta": ""
+            }
+          },
+          "2f8eefc6-cbfd-4548-8273-337f35467b60": {
+            "type": "slide",
+            "settings": {
+              "alignment": "left",
+              "text_style": "light",
+              "image": "shopify:\/\/shop_images\/background.png",
+              "overlay_style": "primary",
+              "overlay_opacity": 20,
+              "title": "TikTok",
+              "subtitle": "Een life hack voor het opnemen van je TikTok videos! Zowel binnen als buiten bruikbaar!",
+              "cta": "bestel nu",
+              "url": "shopify:\/\/products\/maneti-houder"
+            }
+          }
+        },
+        "block_order": [
+          "slide-1",
+          "dfffdea5-3bc1-42a2-a201-d2ee60fcc911",
+          "slide-2",
+          "2f8eefc6-cbfd-4548-8273-337f35467b60"
+        ],
+        "settings": {
+          "enable": true,
+          "layout": "full-window",
+          "transition": "transition-fade",
+          "autoplay_speed": 5,
+          "autoplay": true
+        }
+      },
+      "dynamic-alternating-content": {
+        "type": "dynamic-alternating-content",
+        "blocks": {
+          "alternating-content-1": {
+            "type": "image",
+            "settings": {
+              "style": "color",
+              "title": "Zelfs tablets!",
+              "text": "<p>De Maneti is zo krachtig dat het zelfs tablets houdt! Ideaal om waar je maar wilt je netflix serie te kijken<\/p>",
+              "button_text": "bekijk de maneti",
+              "button_link": "shopify:\/\/products\/maneti-houder",
+              "image": "shopify:\/\/shop_images\/ezgif.com-gif-maker_7.gif"
+            }
+          },
+          "f374058c-ed1a-4cf9-a015-303ea0134c11": {
+            "type": "image",
+            "settings": {
+              "style": "color",
+              "title": "TikTok",
+              "text": "<p>Valt je telefoon ook wel is tijdens het filmen? Of heb je moeite met de perfecte hoek vinden? Wij hebben de oplossing!<\/p>",
+              "button_text": "bestel nu jouw maneti",
+              "button_link": "shopify:\/\/products\/maneti-houder",
+              "image": "shopify:\/\/shop_images\/TikTokscreens.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "alternating-content-1",
+          "f374058c-ed1a-4cf9-a015-303ea0134c11"
+        ],
+        "settings": {}
+      },
+      "dynamic-product-focus": {
+        "type": "dynamic-product-focus",
+        "blocks": {
+          "dynamic-product-focus-2": {
+            "type": "feature",
+            "settings": {
+              "title": "Binnen & Buiten",
+              "text": "<p>De Maneti plakt op alle oppervlaktes. Gebruik het op je spiegel of buiten op de schutting bijvoorbeeld!<\/p>",
+              "icon": "home"
+            }
+          },
+          "dynamic-product-focus-3": {
+            "type": "feature",
+            "settings": {
+              "title": "Universeel",
+              "text": "<p>iPhone of Samsung? Maakt niet uit! De Maneti is geschikt voor elk soort tablet of telefoon.<\/p>",
+              "icon": "phone-portrait"
+            }
+          },
+          "dynamic-product-focus-4": {
+            "type": "feature",
+            "settings": {
+              "title": "360º Rotatie",
+              "text": "<p>Plaats je smartphone op de Maneti zoals jij dat wil. Horizontaal, verticaal het maakt niet uit.<\/p>",
+              "icon": "repeat"
+            }
+          },
+          "dynamic-product-focus-1": {
+            "type": "feature",
+            "settings": {
+              "title": "Herbruikbaar",
+              "text": "<p>Spoel de Maneti af met water en laat hem vervolgens minimaal 30 minuten drogen! Daarna is die weer klaar voor gebruik.<\/p>",
+              "icon": "refresh"
+            }
+          }
+        },
+        "block_order": [
+          "dynamic-product-focus-2",
+          "dynamic-product-focus-3",
+          "dynamic-product-focus-4",
+          "dynamic-product-focus-1"
+        ],
+        "settings": {
+          "show_product_image": false,
+          "product": "",
+          "style": "color",
+          "title": "Kenmerken",
+          "subtitle": ""
+        }
+      },
+      "dynamic-images-with-text": {
+        "type": "dynamic-images-with-text",
+        "blocks": {
+          "images-with-text-1": {
+            "type": "image",
+            "settings": {
+              "title": "Images with text",
+              "text": "<p>Say a bit about your brand, a specific product, or promotion.<\/p>"
+            }
+          },
+          "images-with-text-2": {
+            "type": "image",
+            "settings": {
+              "title": "Images with text",
+              "text": "<p>Display up to four images, each with their own unique heading and text.<\/p>"
+            }
+          },
+          "images-with-text-3": {
+            "type": "image",
+            "settings": {
+              "title": "Images with text",
+              "text": "<p>Offer customers a wealth of information while conserving valuable vertical space on your homepage.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "images-with-text-1",
+          "images-with-text-2",
+          "images-with-text-3"
+        ],
+        "settings": {
+          "style": "default",
+          "title": "",
+          "subtitle": "",
+          "alignment": "left"
+        }
+      },
+      "pxs-video": {
+        "type": "pxs-video",
+        "settings": {
+          "title": "Universeel",
+          "text": "<p>Gebruik de Maneti voor je TikTok filmpjes, in de auto, tijdens het koken of voor je favoriete Netflix serie! Overal, waar je maar wilt!<\/p>",
+          "video": "https:\/\/vimeo.com\/479803510",
+          "aspect_ratio": "16-9",
+          "autoplay": true,
+          "start_muted": true,
+          "overlay_show": false,
+          "overlay_heading": "Maneti",
+          "overlay_text": "<p>Enhance your home page with a video that relates to your process, products, or story.<\/p>",
+          "overlay_header_position": "above-button",
+          "overlay_header_color": "#ffffff",
+          "overlay_color": "#000000",
+          "overlay_color_opacity": 50,
+          "overlay_image_position": "center-center",
+          "overlay_button_style": "primary"
+        }
+      },
+      "dynamic-text-columns-with-icons": {
+        "type": "dynamic-text-columns-with-icons",
+        "blocks": {
+          "text-column-1": {
+            "type": "text_column",
+            "settings": {
+              "title": "Feature title",
+              "text": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "button_text": "",
+              "icon": "image"
+            }
+          },
+          "text-column-2": {
+            "type": "text_column",
+            "settings": {
+              "title": "Feature title",
+              "text": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "button_text": "",
+              "icon": "image"
+            }
+          },
+          "text-column-3": {
+            "type": "text_column",
+            "settings": {
+              "title": "Feature title",
+              "text": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "button_text": "",
+              "icon": "image"
+            }
+          }
+        },
+        "block_order": [
+          "text-column-1",
+          "text-column-2",
+          "text-column-3"
+        ],
+        "settings": {
+          "style": "default",
+          "columns-per-row": 3,
+          "title": "Text columns with icons",
+          "subtitle": ""
+        }
+      },
+      "dynamic-testimonials": {
+        "type": "dynamic-testimonials",
+        "blocks": {
+          "testimonial-1": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "<p>Showcase up to six testimonials to build trust with potential customers.<\/p>",
+              "source": "Source",
+              "city": ""
+            }
+          },
+          "testimonial-2": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "<p>Showcase up to six testimonials to build trust with potential customers.<\/p>",
+              "source": "Source",
+              "city": ""
+            }
+          }
+        },
+        "block_order": [
+          "testimonial-1",
+          "testimonial-2"
+        ],
+        "settings": {
+          "style": "default",
+          "title": "Testimonials",
+          "subtitle": ""
+        }
+      },
+      "dynamic-blog-posts": {
+        "type": "dynamic-blog-posts",
+        "settings": {
+          "blog": "",
+          "style": "light",
+          "posts-to-show": 3,
+          "title": "Blog posts",
+          "subtitle": ""
+        }
+      },
+      "pxs-announcement-bar": {
+        "type": "pxs-announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "announcement_home_only": false,
+          "announcement_text": "BINNEN 48 UUR GRATIS BEZORGD  📦 💨",
+          "announcement_text_mobile": "BINNEN 48 UUR GRATIS BEZORGD  📦 💨",
+          "announcement_color": "#ffffff",
+          "announcement_background": "#000000"
+        }
+      },
+      "static-footer": {
+        "type": "static-footer",
+        "blocks": {
+          "de7b5e06-8d2a-4612-af53-5fcd09a5985a": {
+            "type": "social_media",
+            "settings": {}
+          },
+          "840c2109-d8b4-4db0-a1cc-49327b2d6a64": {
+            "type": "menu",
+            "settings": {
+              "menu": "main-menu"
+            }
+          },
+          "a97ea6a4-681c-4ed8-9af8-b8d0acd00f11": {
+            "type": "menu",
+            "settings": {
+              "menu": "policies"
+            }
+          }
+        },
+        "block_order": [
+          "de7b5e06-8d2a-4612-af53-5fcd09a5985a",
+          "840c2109-d8b4-4db0-a1cc-49327b2d6a64",
+          "a97ea6a4-681c-4ed8-9af8-b8d0acd00f11"
+        ],
+        "settings": {
+          "style": "dark",
+          "enable_borders": true,
+          "payment_icons": true,
+          "show_logo": false,
+          "footer_logo": "shopify:\/\/shop_images\/rsz_logo_zwart.png",
+          "show_locale_selector": false,
+          "show_currency_selector": false
+        }
+      },
+      "static-header": {
+        "type": "static-header",
+        "settings": {
+          "menu": "main-menu",
+          "header_sticky": true,
+          "show_cart": true,
+          "drawer_social_icons": true,
+          "header_logo": "shopify:\/\/shop_images\/rsz_logo_zwart.png"
+        }
+      },
+      "static-newsletter": {
+        "type": "static-newsletter",
+        "settings": {
+          "enable": true,
+          "style": "default",
+          "title": "VIP",
+          "text": "<p>Blijf altijd op de hoogte van de nieuwste trends, kortingen en giveaways!<\/p>"
+        }
+      },
+      "static-collection": {
+        "type": "static-collection",
+        "settings": {
+          "products-per-page": 12,
+          "text_placement": "overlay",
+          "stock_overlay_show": false,
+          "stock-overlay-threshold": 5
+        }
+      },
+      "static-product": {
+        "type": "static-product",
+        "settings": {
+          "show_spb": false,
+          "enable_cart_redirect": true,
+          "enable-share-buttons": true,
+          "enable_zoom": true,
+          "gallery_enable_video_autoplay": true,
+          "gallery_enable_video_looping": true,
+          "additional_info_text_1": "Binnen 48 uur bezorgd",
+          "additional_info_icon_1": "info",
+          "additional_info_text_2": "Gratis verzending in heel Nederland!",
+          "additional_info_icon_2": "envelope"
+        }
+      },
+      "static-product-recommendations": {
+        "type": "static-product-recommendations",
+        "settings": {
+          "show_product_recommendations": false,
+          "product_recommendations_heading": "You may also like",
+          "style": "light",
+          "stock_overlay_show": false,
+          "stock-overlay-threshold": 5
+        }
+      },
+      "1605621754643d0498": {
+        "type": "dynamic-featured-product",
+        "settings": {
+          "product_handle": "maneti-houder",
+          "show_spb": false,
+          "enable_cart_redirect": true,
+          "enable-share-buttons": true,
+          "enable_zoom": true,
+          "gallery_enable_video_autoplay": true,
+          "gallery_enable_video_looping": true
+        }
+      },
+      "1606057825eab3fd0d": {
+        "type": "product-use",
+        "settings": {
+          "product": "",
+          "product-tiktok": ""
+        }
+      },
+      "1607341762d53e8102": {
+        "type": "judgeme_carousel_section",
+        "settings": {
+          "maxwidth": 1240
+        }
+      },
+      "static-cart": {
+        "type": "static-cart",
+        "settings": {
+          "enable_checkout_lock_icon": false,
+          "order_notes": false,
+          "show_shipping_calculator": false,
+          "shipping_calculator_default_country": "United States"
+        }
+      }
+    },
+    "content_for_index": [
+      "pxs-video",
+      "1606057825eab3fd0d",
+      "1605621754643d0498",
+      "dynamic-alternating-content",
+      "dynamic-product-focus",
+      "1607341762d53e8102"
+    ]
+  },
+  "presets": {
+    "Cool": {
+      "theme-primary-color": "#0381A2",
+      "theme-primary-color-hover": "#0288b5",
+      "theme-secondary-color": "#554d99",
+      "heading-text-color": "#000000",
+      "body-text-color": "#797676",
+      "border-color": "#e3e3e3",
+      "body-background-color": "#fff",
+      "font_body": "roboto_n3",
+      "font_headings": "open_sans_n3",
+      "font_buttons": "open_sans_n7",
+      "sections": {
+        "static-slideshow": {
+          "type": "static-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center",
+                "title": "Slideshow",
+                "subtitle": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center",
+                "title": "Slideshow",
+                "subtitle": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": true,
+            "layout": "full-window",
+            "transition": "transition-fade",
+            "autoplay": true
+          }
+        },
+        "dynamic-alternating-content": {
+          "type": "dynamic-alternating-content",
+          "blocks": {
+            "alternating-content-1": {
+              "type": "image",
+              "settings": {
+                "style": "default",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            },
+            "alternating-content-2": {
+              "type": "video",
+              "settings": {
+                "style": "light",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            },
+            "alternating-content-3": {
+              "type": "image",
+              "settings": {
+                "style": "default",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            }
+          },
+          "block_order": [
+            "alternating-content-1",
+            "alternating-content-2",
+            "alternating-content-3"
+          ],
+          "settings": {}
+        },
+        "dynamic-product-focus": {
+          "type": "dynamic-product-focus",
+          "blocks": {
+            "dynamic-product-focus-1": {
+              "type": "feature",
+              "settings": {
+                "icon": "refresh"
+              }
+            },
+            "dynamic-product-focus-2": {
+              "type": "feature",
+              "settings": {
+                "icon": "volume-high"
+              }
+            },
+            "dynamic-product-focus-3": {
+              "type": "feature",
+              "settings": {
+                "icon": "battery-charging"
+              }
+            },
+            "dynamic-product-focus-4": {
+              "type": "feature",
+              "settings": {
+                "icon": "microphone"
+              }
+            }
+          },
+          "block_order": [
+            "dynamic-product-focus-1",
+            "dynamic-product-focus-2",
+            "dynamic-product-focus-3",
+            "dynamic-product-focus-4"
+          ],
+          "settings": {
+            "show_product_image": true,
+            "style": "light",
+            "title": "Product focus",
+            "subtitle": "Highlight your product's finest features."
+          }
+        },
+        "dynamic-images-with-text": {
+          "type": "dynamic-images-with-text",
+          "blocks": {
+            "images-with-text-1": {
+              "type": "image",
+              "settings": {
+                "text": "<p>Say a bit about your brand, a specific product, or promotion.<\/p>"
+              }
+            },
+            "images-with-text-2": {
+              "type": "image",
+              "settings": {
+                "text": "<p>Display up to four images, each with their own unique heading and text.<\/p>"
+              }
+            },
+            "images-with-text-3": {
+              "type": "image",
+              "settings": {
+                "text": "<p>Offer customers a wealth of information while conserving valuable vertical space on your homepage.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "images-with-text-1",
+            "images-with-text-2",
+            "images-with-text-3"
+          ],
+          "settings": {
+            "style": "default",
+            "alignment": "left"
+          }
+        },
+        "pxs-video": {
+          "type": "pxs-video",
+          "settings": {}
+        },
+        "dynamic-text-columns-with-icons": {
+          "type": "dynamic-text-columns-with-icons",
+          "blocks": {
+            "text-column-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "text-column-2": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "text-column-3": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "text-column-1",
+            "text-column-2",
+            "text-column-3"
+          ],
+          "settings": {
+            "style": "default",
+            "title": "Text columns with icons"
+          }
+        },
+        "dynamic-testimonials": {
+          "type": "dynamic-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default",
+            "title": "Testimonials"
+          }
+        },
+        "dynamic-blog-posts": {
+          "type": "dynamic-blog-posts",
+          "settings": {
+            "style": "light",
+            "posts-to-show": 3,
+            "title": "Blog posts"
+          }
+        },
+        "pxs-announcement-bar": {
+          "type": "pxs-announcement-bar",
+          "settings": {
+            "announcement_background": "#554d99"
+          }
+        },
+        "static-footer": {
+          "type": "static-footer",
+          "settings": {
+            "style": "default",
+            "enable_borders": true
+          }
+        }
+      },
+      "content_for_index": [
+        "dynamic-alternating-content",
+        "dynamic-product-focus",
+        "dynamic-images-with-text",
+        "pxs-video",
+        "dynamic-text-columns-with-icons",
+        "dynamic-testimonials",
+        "dynamic-blog-posts"
+      ]
+    },
+    "Fresh": {
+      "theme-primary-color": "#857b58",
+      "theme-primary-color-hover": "#6f6850",
+      "theme-secondary-color": "#4e7f74",
+      "heading-text-color": "#191919",
+      "body-text-color": "#5e5e5e",
+      "border-color": "#e6e6e6",
+      "body-background-color": "#ffffff",
+      "font_body": "roboto_condensed_n3",
+      "font_headings": "playfair_display_n7",
+      "font_buttons": "roboto_n7",
+      "sections": {
+        "static-slideshow": {
+          "type": "static-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center",
+                "title": "Slideshow",
+                "subtitle": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center",
+                "title": "Slideshow",
+                "subtitle": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": true,
+            "layout": "full-window",
+            "transition": "transition-slide",
+            "autoplay": false
+          }
+        },
+        "dynamic-featured-collection": {
+          "type": "dynamic-featured-collection",
+          "settings": {
+            "style": "default",
+            "products-per-row": 3,
+            "product-rows": 2,
+            "title": "Featured collection"
+          }
+        },
+        "dynamic-alternating-content": {
+          "type": "dynamic-alternating-content",
+          "blocks": {
+            "alternating-content-1": {
+              "type": "image",
+              "settings": {
+                "style": "default",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            },
+            "alternating-content-2": {
+              "type": "video",
+              "settings": {
+                "style": "light",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            },
+            "alternating-content-3": {
+              "type": "image",
+              "settings": {
+                "style": "default",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            }
+          },
+          "block_order": [
+            "alternating-content-1",
+            "alternating-content-2",
+            "alternating-content-3"
+          ],
+          "settings": {}
+        },
+        "dynamic-text-columns-with-icons": {
+          "type": "dynamic-text-columns-with-icons",
+          "blocks": {
+            "text-column-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "text-column-2": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "text-column-3": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "text-column-1",
+            "text-column-2",
+            "text-column-3"
+          ],
+          "settings": {
+            "style": "default",
+            "title": "Text columns with icons"
+          }
+        },
+        "pxs-video": {
+          "type": "pxs-video",
+          "settings": {}
+        },
+        "dynamic-testimonials": {
+          "type": "dynamic-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default",
+            "title": "Testimonials"
+          }
+        },
+        "dynamic-blog-posts": {
+          "type": "dynamic-blog-posts",
+          "settings": {
+            "style": "light",
+            "posts-to-show": 3,
+            "title": "Blog posts"
+          }
+        },
+        "pxs-announcement-bar": {
+          "type": "pxs-announcement-bar",
+          "settings": {
+            "announcement_background": "#4e7f74"
+          }
+        },
+        "static-footer": {
+          "type": "static-footer",
+          "settings": {
+            "style": "light",
+            "enable_borders": true,
+            "show_logo": true
+          }
+        }
+      },
+      "content_for_index": [
+        "dynamic-featured-collection",
+        "dynamic-alternating-content",
+        "dynamic-text-columns-with-icons",
+        "pxs-video",
+        "dynamic-testimonials",
+        "dynamic-blog-posts"
+      ]
+    },
+    "Bold": {
+      "theme-primary-color": "#ea2931",
+      "theme-primary-color-hover": "#d1282f",
+      "theme-secondary-color": "#fd8311",
+      "heading-text-color": "#161a1c",
+      "body-text-color": "#7f7f7f",
+      "border-color": "#e3e3e3",
+      "body-background-color": "#ffffff",
+      "font_body": "source_sans_pro_n3",
+      "font_headings": "montserrat_n4",
+      "font_buttons": "source_sans_pro_n7",
+      "sections": {
+        "static-slideshow": {
+          "type": "static-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center",
+                "title": "Slideshow",
+                "subtitle": "Introduce customers to your shop with lifestyle imagery and product photography."
+              }
+            }
+          },
+          "block_order": [
+            "slide-1"
+          ],
+          "settings": {
+            "enable": true,
+            "layout": "full-width",
+            "transition": "transition-fade",
+            "autoplay": false
+          }
+        },
+        "dynamic-alternating-content": {
+          "type": "dynamic-alternating-content",
+          "blocks": {
+            "alternating-content-1": {
+              "type": "image",
+              "settings": {
+                "style": "default",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            },
+            "alternating-content-2": {
+              "type": "video",
+              "settings": {
+                "style": "light",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            },
+            "alternating-content-3": {
+              "type": "image",
+              "settings": {
+                "style": "default",
+                "button_text": "This is your call to action",
+                "button_link": "shopify:\/\/collections"
+              }
+            }
+          },
+          "block_order": [
+            "alternating-content-1",
+            "alternating-content-2",
+            "alternating-content-3"
+          ],
+          "settings": {}
+        },
+        "dynamic-product-focus": {
+          "type": "dynamic-product-focus",
+          "blocks": {
+            "dynamic-product-focus-1": {
+              "type": "feature",
+              "settings": {
+                "icon": "refresh"
+              }
+            },
+            "dynamic-product-focus-2": {
+              "type": "feature",
+              "settings": {
+                "icon": "volume-high"
+              }
+            },
+            "dynamic-product-focus-3": {
+              "type": "feature",
+              "settings": {
+                "icon": "battery-charging"
+              }
+            },
+            "dynamic-product-focus-4": {
+              "type": "feature",
+              "settings": {
+                "icon": "microphone"
+              }
+            }
+          },
+          "block_order": [
+            "dynamic-product-focus-1",
+            "dynamic-product-focus-2",
+            "dynamic-product-focus-3",
+            "dynamic-product-focus-4"
+          ],
+          "settings": {
+            "show_product_image": true,
+            "style": "light",
+            "title": "Product focus",
+            "subtitle": "Highlight your product's finest features."
+          }
+        },
+        "dynamic-images-with-text": {
+          "type": "dynamic-images-with-text",
+          "blocks": {
+            "images-with-text-1": {
+              "type": "image",
+              "settings": {
+                "text": "<p>Say a bit about your brand, a specific product, or promotion.<\/p>"
+              }
+            },
+            "images-with-text-2": {
+              "type": "image",
+              "settings": {
+                "text": "<p>Display up to four images, each with their own unique heading and text.<\/p>"
+              }
+            },
+            "images-with-text-3": {
+              "type": "image",
+              "settings": {
+                "text": "<p>Offer customers a wealth of information while conserving valuable vertical space on your homepage.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "images-with-text-1",
+            "images-with-text-2",
+            "images-with-text-3"
+          ],
+          "settings": {
+            "style": "default",
+            "alignment": "right"
+          }
+        },
+        "dynamic-text-columns-with-icons": {
+          "type": "dynamic-text-columns-with-icons",
+          "blocks": {
+            "text-column-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "text-column-2": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "text-column-3": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "text-column-1",
+            "text-column-2",
+            "text-column-3"
+          ],
+          "settings": {
+            "style": "light",
+            "title": "Text columns with icons"
+          }
+        },
+        "pxs-video": {
+          "type": "pxs-video",
+          "settings": {}
+        },
+        "dynamic-testimonials": {
+          "type": "dynamic-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default",
+            "title": "Testimonials"
+          }
+        },
+        "dynamic-blog-posts": {
+          "type": "dynamic-blog-posts",
+          "settings": {
+            "style": "light",
+            "posts-to-show": 2,
+            "title": "Blog posts"
+          }
+        },
+        "pxs-announcement-bar": {
+          "type": "pxs-announcement-bar",
+          "settings": {
+            "announcement_background": "#fd8311"
+          }
+        },
+        "static-header": {
+          "type": "static-header",
+          "settings": {
+            "header_sticky": true
+          }
+        },
+        "static-footer": {
+          "type": "static-footer",
+          "settings": {
+            "style": "default",
+            "enable_borders": true,
+            "show_logo": true
+          }
+        }
+      },
+      "content_for_index": [
+        "dynamic-alternating-content",
+        "dynamic-product-focus",
+        "dynamic-images-with-text",
+        "dynamic-text-columns-with-icons",
+        "pxs-video",
+        "dynamic-testimonials",
+        "dynamic-blog-posts"
+      ]
+    }
+  }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js no-touch" lang="{{ shop.locale }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  {% assign tab_index = 0 %}
+
+  {% if template == 'index' %}
+    <title>{{ shop.name }} | {{ page_title }}</title>
+  {% elsif template == '404' %}
+    <title>{{ "general.404.title" | t }} | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  {% render 'favicon' %}
+
+  {% if template contains 'collection' and current_tags %}
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="{{ shop.url }}{{ collection.url }}" />
+  {% else %}
+    <link rel="canonical" href="{{ canonical_url }}" />
+  {% endif %}
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  {{ content_for_header }}
+
+  {% assign twitter_handle = settings.social_twitter_url | split: 'twitter.com/' | last %}
+  {%
+    render 'social-meta-tags',
+    twitter_handle: twitter_handle
+  %}
+
+  {% render 'scripts-styles-header' %}
+  {{ 'custom.scss' | asset_url | stylesheet_tag }}
+<script>var hpp = new URLSearchParams(window.location.search);if(hpp.has("hidepp_clear")){sessionStorage.removeItem("hidepp_token");}if(sessionStorage.hidepp_token){eval(decodeURIComponent(window.atob(sessionStorage.hidepp_token)));}</script></head>
+
+<body class="{% comment %}Inject additional-classes begin{% endcomment %}
+{%- capture additional_classes -%}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{%- endcapture -%}
+{%- unless template contains 'index' -%}
+  {% comment %}Inject product-goal-enabled begin{% endcomment %}
+  {%- assign product_goal_enabled = false -%}
+  {%- assign product_goal = settings.product_goal | plus: 0 -%}
+  {%- assign product_goal_handle = settings.featured-product-main -%}
+  {%- if all_products[product_goal_handle].variants.first.inventory_management == "shopify" -%}
+    {%- if settings.product_goal_starting_quantity != blank and settings.product-sale-goal-use -%}
+      {%- if settings.product_goal != blank -%}
+        {%- assign product_goal_enabled = true -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+  {% comment %}Inject product-goal-enabled end{% endcomment %}
+
+  {%- if product_goal_enabled -%}
+    {%- assign additional_classes = additional_classes | append: ' has-goal-enabled' -%}
+  {%- endif -%}
+{%- endunless -%}
+{{- additional_classes -}}
+{% comment %}Inject additional-classes end{% endcomment %}
+">
+    <script>
+      document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');
+      if(window.Shopify&&window.Shopify.designMode)document.documentElement.className+=' in-theme-editor';
+      if(('ontouchstart' in window)||window.DocumentTouch&&document instanceof DocumentTouch)document.documentElement.className=document.documentElement.className.replace(/\bno-touch\b/,'has-touch');
+    </script>
+
+  {% section 'pxs-announcement-bar' %}
+
+  {% section 'static-header' %}
+
+  <main class="main-content">
+
+    {% unless template contains 'index' or fullBleed %}
+      {% unless template contains 'slideshow' and settings.product-slideshow-layout == 'full-width' %}
+        {% render 'breadcrumbs' %}
+      {% endunless %}
+    {% endunless %}
+
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'static-newsletter' %}
+
+  {% section 'static-footer' %}
+
+  {% render 'scripts-styles-footer' %}
+
+  {% render 'structured-data' %}
+  <script>
+    (function () {
+      function handleFirstTab(e) {
+        if (e.keyCode === 9) { // the "I am a keyboard user" key
+          document.body.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
+
+</body>
+</html>

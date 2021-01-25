@@ -1,0 +1,41 @@
+{% comment %}
+  @param id {String}
+         Name of icon to display
+
+  @param icon_class {string}
+         Custom class to add to SVG
+{% endcomment %}
+
+{% assign icon_class = icon_class | default: nil %}
+
+{%- capture icon -%}
+  {%- capture shared_svg_attrs -%}
+    class="{{ id | replace: '_', '-' }} {% if icon_class %}{{ icon_class }}{% endif %}"
+    aria-hidden="true"
+    focusable="false"
+    role="presentation"
+    xmlns="http://www.w3.org/2000/svg"
+  {%- endcapture -%}
+
+  {% if id == 'icon-ar' %}
+    <svg {{ shared_svg_attrs }} viewBox="0 0 60 60">
+      <path fill="currentColor" d="M40.4 22.57l-8.8-5.14a3.19 3.19 0 00-3.21 0l-8.8 5.14A3.24 3.24 0 0018 25.36v10.28a3.23 3.23 0 001.6 2.79l8.8 5.14a3.2 3.2 0 003.21 0l8.8-5.14A3.23 3.23 0 0042 35.64V25.36a3.24 3.24 0 00-1.6-2.79zM20.6 36.7a1.23 1.23 0 01-.6-1.06V25.36a1.23 1.23 0 01.6-1.06l8.8-5.14a1.19 1.19 0 011.19 0l8.8 5.14a1.2 1.2 0 01.36.34l-9.51 4.89a2.23 2.23 0 00-1.25 2V41.6z"/>
+    </svg>
+  {% endif %}
+
+  {% if id == 'icon-model-thumb' %}
+    <svg {{ shared_svg_attrs }} width="26" height="26" viewBox="0 0 26 26">
+      <path d="M1,25H25V1H1Z" fill="none"/>
+      <path d="M19.13,8.28,14,5.32a2,2,0,0,0-2,0l-5.12,3a2,2,0,0,0-1,1.76V16a2,2,0,0,0,1,1.76l5.12,3a2,2,0,0,0,2,0l5.12-3a2,2,0,0,0,1-1.76V10A2,2,0,0,0,19.13,8.28Zm-6.4,11.1-5.12-3A.53.53,0,0,1,7.35,16V10a.53.53,0,0,1,.27-.46l5.12-3a.53.53,0,0,1,.53,0l5.12,3-4.72,2.68a1.33,1.33,0,0,0-.67,1.2v6a.53.53,0,0,1-.26,0Z" fill="currentColor" style="isolation:isolate"/>
+    </svg>
+  {% endif %}
+
+  {% if id == 'icon-play-thumb' %}
+    <svg {{ shared_svg_attrs }} width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M1 25H25V1H1V25Z" fill="none"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.71814 6.71984C9.0517 6.31605 8.19995 6.79588 8.19995 7.5751V18.311C8.19995 19.1138 9.09826 19.5893 9.76217 19.1379L18.1123 13.4612C18.7146 13.0518 18.6912 12.1564 18.0682 11.779L9.71814 6.71984Z" fill="currentColor"/>
+    </svg>
+  {% endif %}
+{%- endcapture -%}
+
+{{ icon | strip_newlines }}

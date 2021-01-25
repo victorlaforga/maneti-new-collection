@@ -1,0 +1,29 @@
+{% assign default_logo = default_logo | default: nil %}
+{% assign alternate_logo = alternate_logo | default: nil %}
+
+{% if default_logo %}
+  {%
+    render 'rimg',
+    class: 'branding-logo-image logo-regular',
+    img: default_logo,
+    alt: shop.name,
+    size: '200x100',
+    lazy: false,
+    attr: 'data-header-logo'
+  %}
+  {% if alternate_logo %}
+    {%
+      render 'rimg',
+      class: 'branding-logo-image logo-alternate',
+      img: alternate_logo,
+      alt: shop.name,
+      size: '200x100',
+      lazy: false,
+      attr: 'data-header-logo'
+    %}
+  {% endif %}
+{% else %}
+  <span class="branding-logo-heading">
+    {{ shop.name }}
+  </span>
+{% endif %}

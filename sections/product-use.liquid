@@ -1,0 +1,77 @@
+{%- assign title = section.settings.title -%}
+{%- assign product = all_products[section.settings.product] -%}
+{%- assign productTikTok = all_products[section.settings.product-tiktok] -%}
+{%- assign productTitle = product.title -%}
+{%- assign productTikTokTitle = productTikTok.title -%}
+{%- assign productPrice = product.price -%}
+{%- assign productTikTokPrice = productTikTok.price -%}
+{%- assign product_image = product.featured_image -%}
+
+
+<section class="section-summary">
+    <div class="section-summary-images">
+        <img id="tiktok-img" src="https://cdn.shopify.com/s/files/1/0424/0982/0320/files/tiktok-1.svg?v=1603990848" alt="">
+    </div>
+    <div class="title-logo">
+        <h2 class="module-title title-summary">Aangeraden oppervlaktes</h2>
+        
+        </div>
+    <div class="containerSummary">
+        <div class="list-use">
+<ul>
+    <div class="oppervlakte">{% include 'check' %} <li>Plastic</li> </div>
+    <div class="oppervlakte">{% include 'check' %} <li>Glas</li> </div>
+    <div class="oppervlakte">{% include 'check' %} <li>Keramiek</li> </div>
+    <div class="oppervlakte">{% include 'check' %} <li>Muur</li> </div>
+    <div class="oppervlakte">{% include 'check' %} <li>Hout</li> </div>
+    <div class="oppervlakte">{% include 'check' %} <li>Metalen</li> </div>
+    <div class="oppervlakte">{% include 'check' %} <li>Beton</li> </div>
+    <div class="oppervlakte">{% include 'check' %} <li>Karton</li> </div>
+   
+
+
+</ul>
+</div>
+<div class="list-use">
+    <ul>
+        <div class="oppervlakte">{% include 'remove' %} <li>Behangen muren</li> </div>
+        <div class="oppervlakte">{% include 'remove' %} <li>Geverfde muren</li> </div>
+        <div class="oppervlakte">{% include 'remove' %} <li>Ondergronden met elk soort anti-hechtcoating</li> </div>
+        
+       
+    
+    
+    </ul>
+          
+
+
+
+</div>
+    </div>
+    </section>
+    
+{% schema %}
+
+{
+    "name": "Title and product",
+    "settings": [
+     {
+        "type": "product",
+        "id": "product",
+        "label": "Featured Product"
+    },
+    {
+        "type": "product",
+        "id": "product-tiktok",
+        "label": "Featured Product TikTok"
+    }
+    ],
+    "presets": [
+        {
+            "name": "Summary products", // Make it avaible for the client to drag and drop the section on the homepage
+            "category": "Custom section"
+        }
+    ]
+}
+
+{% endschema %}

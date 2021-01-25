@@ -1,0 +1,9 @@
+{% assign title = title | default: nil %}
+{% assign size = size | default: '4x' %}
+
+<ion-icon
+  class="{{ class }} icon-size-{{ size }}"
+  name="{{ icon | escape }}"
+  aria-hidden="true"
+  {% if title %}title="{{ title | strip_html | escape }}"{% endif %}>
+</ion-icon>

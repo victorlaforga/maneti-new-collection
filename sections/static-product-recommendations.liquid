@@ -1,0 +1,106 @@
+{% if section.settings.show_product_recommendations %}
+  {% assign product_limit = 3 %}
+
+   <script
+    type="application/json"
+    data-section-type="static-product-recommendations"
+    data-section-id="{{ section.id }}"
+    data-section-data
+  >
+    {
+      "settings": {
+        "limit": {{ product_limit }}
+      },
+      "productId": {{ product.id | json }}
+    }
+  </script>
+
+  <section
+    data-html
+    data-product-recommendations
+  >
+    {% if recommendations.products_count > 0 %}
+      <div class="module-wrapper style-{{ section.settings.style }}">
+        <div class="module recommended-products">
+          <div class="module-header recommended-products-header">
+            <h3 class="module-title recommended-products-title">
+              {{ section.settings.product_recommendations_heading }}
+            </h3>
+          </div>
+          <div class="module-body recommended-products-body">
+            <div class="list column-3">
+              {% for product in recommendations.products limit: product_limit %}
+                {% render 'product-list-item', item: product %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Recommended products",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_product_recommendations",
+      "label": "Show dynamic recommendations",
+      "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "Heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Background style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        }
+      ],
+      "default": "light"
+    },
+    {
+      "type": "header",
+      "content": "Stock level indicator"
+    },
+    {
+      "type": "checkbox",
+      "id": "stock_overlay_show",
+      "label": "Show indicator",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "stock-overlay-threshold",
+      "label": "Display when stock is lower than:",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    }
+  ]
+}
+
+{% endschema %}

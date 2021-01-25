@@ -1,0 +1,135 @@
+<table class="cart-items clean" data-cart-table>
+  <thead class="cart-items-thead">
+    <tr>
+      <th class="first">{{ 'general.general.product' | t}}</th>
+      <th class="cart-price-header">{{ 'general.general.price' | t }}</th>
+      <th class="cart-quantity-header">{{ 'general.general.quantity' | t }}</th>
+      <th class="last">{{ 'general.general.total' | t }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in cart.items %}
+      {%- assign item_has_discounts = false -%}
+      {%- if item.line_level_discount_allocations.size > 0 -%}
+        {%- assign item_has_discounts = true -%}
+      {%- endif -%}
+      <tr
+        class="cart-item variant-{{ item.variant.id }} {% render 'for-looper', forloop: forloop %}"
+        data-cart-item-key="{{ item.key }}"
+        data-url="{{ item.url }}">
+        <td class="cart-item-product cart-item-td">
+          <div class="cart-item-image-container">
+            <a class="cart-image" href="{{ item.url }}">
+              {% if item.image %}
+                {%
+                  render 'rimg',
+                  class: 'cart-item-image',
+                  img: item.image,
+                  size: '80x80',
+                  alt: item.title,
+                  lazy: false
+                %}
+              {% else %}
+                {{ 'image'| placeholder_svg_tag: 'cart-item-image placeholder-svg' }}
+              {% endif %}
+            </a>
+            <a
+              class="cart-item-remove mobile-only"
+              href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
+              data-cart-action="remove"
+            >
+              <span class="icon icon-cross"></span>
+            </a>
+          </div>
+          <div class="cart-item-product-wrap">
+            <span class="cart-title"><a href="{{ item.url }}">{{ item.product.title }}</a></span>
+            <span class="cart-vendor vendor">{{ item.vendor }}</span>
+            {% unless item.variant.title == 'Default Title' %}
+              <span class="cart-variant">{{ item.variant.title }}</span>
+            {% endunless %}
+            {%- if item_has_discounts -%}
+              <ul class="cart-item-discounts">
+                {% for discount_allocation in item.line_level_discount_allocations %}
+                  <li>
+                    {% render 'icon-sale-tag' %}
+                    {{ discount_allocation.discount_application.title }}
+                    (-<span class="money">{{ discount_allocation.amount | money }}</span>)
+                  </li>
+                {% endfor %}
+              </ul>
+            {%- endif -%}
+          </div>
+        </td>
+        <td class="cart-item-price cart-item-td">
+          <span class="mobile-only cart-mobile-line-title">{{ 'general.general.price' | t }}:</span>
+          <div class="cart-item-unit-price">
+            {%- if item_has_discounts -%}
+              <s class="cart-item-original-price money"><div class="pn-price-item" data-id="{{ item.key }}">{{ item.original_price | money }}</div></s>
+            {%- endif -%}
+            <span class="cart-item-final-price money">{{ item.final_price | money }}</span>
+            {%- if item_has_discounts -%}
+              <ul class="cart-item-discounts mobile-only">
+                {% for discount_allocation in item.line_level_discount_allocations %}
+                  <li>
+                    {% render 'icon-sale-tag' %}
+                    {{ discount_allocation.discount_application.title }}<br>
+                    (-<span class="money">{{ discount_allocation.amount | money }}</span>)
+                  </li>
+                {% endfor %}
+              </ul>
+            {%- endif -%}
+            {% if item.unit_price_measurement %}
+              {% capture total_quantity %}<span class="cart-item__total-quantity" data-total-quantity>{{ item.unit_price_measurement.quantity_value }}{{ item.unit_price_measurement.quantity_unit }}</span>{% endcapture %}
+              {% capture unit_price %}<span class="cart-item__unit-price-amount" data-unit-price-amount>{{ item.unit_price | money }}</span>{% endcapture %}
+              {% capture unit_measure %}<span class="cart-item__unit-price-measure" data-unit-price-measure>{%- if item.unit_price_measurement.reference_value != 1 -%}{{ item.unit_price_measurement.reference_value }}{%- endif %}{{ item.unit_price_measurement.reference_unit }}</span>{% endcapture %}
+
+              <div
+                class="cart-item__unit-price"
+                data-unit-price
+              >
+                {{ 'products.product.price_per_unit_html' | t: total_quantity: total_quantity, unit_price: unit_price, unit_measure: unit_measure | strip_newlines }}
+              </div>
+            {% endif %}
+          </div>
+        </td>
+        <td class="cart-item-quantity cart-item-td">
+          <div class="number-input-wrapper cart-item-quantity-wrapper clearfix">
+            <div class="number-input-field">
+              <input
+                type="number"
+                id="cart-item-{{ item.key }}"
+                name="updates[]"
+                class="cart-item-quantity-display"
+                value="{{ item.quantity }}"
+                size="1"
+                aria-label="{{ "general.general.quantity" | t }}"
+                data-cart-product-quantity
+              />
+              <label class="number-input-label" for="cart-item-{{ item.key }}">{{ 'general.general.quantity' | t }}</label>
+            </div>
+            <div class="number-input-nav">
+              <div class="number-input-nav-item icon icon-plus cart-item-increase" data-cart-action="increment"></div>
+              <div class="number-input-nav-item icon icon-minus cart-item-decrease" data-cart-action="decrement"></div>
+            </div>
+          </div>
+        </td>
+        <td class="cart-item-total cart-item-td">
+          <span class="mobile-only cart-mobile-line-title">{{ 'general.general.total' | t }}:</span>
+          <div class="cart-item-total-container">
+            {% if item_has_discounts %}
+              <s class="cart-item-original-price money"><div class="pn-total-line-item" data-id="{{ item.key }}">{{ item.original_line_price | money }}</div></s>
+            {% endif %}
+            <span class="cart-item-final-price money">{{ item.final_line_price | money }}</span>
+            <a
+              class="cart-item-remove"
+              href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
+              data-cart-action="remove"
+            >
+              <span class="icon icon-cross"></span>
+            </a>
+          </div>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

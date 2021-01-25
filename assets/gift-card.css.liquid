@@ -1,0 +1,678 @@
+{%- comment -%}font_body{%- endcomment -%}
+  
+{%- assign fonts_font_body_display = 'auto' -%}
+    
+  {%- comment -%}Normal{%- endcomment -%}
+
+  {%- assign fonts_font_body_family = settings.font_body.family | append: ',' | append: settings.font_body.fallback_families -%}
+  {%- assign fonts_font_body_style = settings.font_body.style -%}
+  {%- assign fonts_font_body_weight = settings.font_body.weight | times: 1 -%}
+  {{ settings.font_body | font_face: font_display: fonts_font_body_display }}
+
+  {%- comment -%}Italic{%- endcomment -%}
+
+  {%- assign fonts_font_body_style_italic = settings.font_body | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
+  {{ settings.font_body | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_body_display }}
+  
+  {%- comment -%}Bolder{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 700 -%}
+  {%- if fonts_font_body_weight > 700 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_body_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_body_bolder = settings.font_body | font_modify: 'weight', 'bolder' -%}
+  {%- assign fonts_font_body_weight_bolder = fonts_font_body_bolder.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_body_bolder | font_face: font_display: fonts_font_body_display }}
+  {{ fonts_font_body_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_body_display }}
+    
+  {%- comment -%}Lighter{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 300 -%}
+  {%- if fonts_font_body_weight < 300 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_body_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_body_lighter = settings.font_body | font_modify: 'weight', 'lighter' -%}
+  {%- assign fonts_font_body_weight_lighter = fonts_font_body_lighter.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_body_lighter | font_face: font_display: fonts_font_body_display }}
+  {{ fonts_font_body_lighter | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_body_display }}
+    
+
+{%- comment -%}font_headings{%- endcomment -%}
+  
+{%- assign fonts_font_headings_display = 'auto' -%}
+    
+  {%- comment -%}Normal{%- endcomment -%}
+
+  {%- assign fonts_font_headings_family = settings.font_headings.family | append: ',' | append: settings.font_headings.fallback_families -%}
+  {%- assign fonts_font_headings_style = settings.font_headings.style -%}
+  {%- assign fonts_font_headings_weight = settings.font_headings.weight | times: 1 -%}
+  {{ settings.font_headings | font_face: font_display: fonts_font_headings_display }}
+
+  {%- comment -%}Italic{%- endcomment -%}
+
+  {%- assign fonts_font_headings_style_italic = settings.font_headings | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
+  {{ settings.font_headings | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_display }}
+  
+  {%- comment -%}Bolder{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 700 -%}
+  {%- if fonts_font_headings_weight > 700 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_headings_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_headings_bolder = settings.font_headings | font_modify: 'weight', 'bolder' -%}
+  {%- assign fonts_font_headings_weight_bolder = fonts_font_headings_bolder.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_headings_bolder | font_face: font_display: fonts_font_headings_display }}
+  {{ fonts_font_headings_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_display }}
+    
+  {%- comment -%}Lighter{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 300 -%}
+  {%- if fonts_font_headings_weight < 300 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_headings_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_headings_lighter = settings.font_headings | font_modify: 'weight', 'lighter' -%}
+  {%- assign fonts_font_headings_weight_lighter = fonts_font_headings_lighter.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_headings_lighter | font_face: font_display: fonts_font_headings_display }}
+  {{ fonts_font_headings_lighter | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_headings_display }}
+    
+
+{%- comment -%}font_buttons{%- endcomment -%}
+  
+{%- assign fonts_font_buttons_display = 'auto' -%}
+    
+  {%- comment -%}Normal{%- endcomment -%}
+
+  {%- assign fonts_font_buttons_family = settings.font_buttons.family | append: ',' | append: settings.font_buttons.fallback_families -%}
+  {%- assign fonts_font_buttons_style = settings.font_buttons.style -%}
+  {%- assign fonts_font_buttons_weight = settings.font_buttons.weight | times: 1 -%}
+  {{ settings.font_buttons | font_face: font_display: fonts_font_buttons_display }}
+
+  {%- comment -%}Italic{%- endcomment -%}
+
+  {%- assign fonts_font_buttons_style_italic = settings.font_buttons | font_modify: 'style', 'italic' | map: 'style' | default: 'italic' -%}
+  {{ settings.font_buttons | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_buttons_display }}
+  
+  {%- comment -%}Bolder{%- endcomment -%}
+
+  {%- assign fonts_weight_adjustment_default = 700 -%}
+  {%- if fonts_font_buttons_weight > 700 -%}
+    {%- assign fonts_weight_adjustment_default = fonts_font_buttons_weight -%}
+  {%- endif -%}
+  {%- assign fonts_font_buttons_bolder = settings.font_buttons | font_modify: 'weight', 'bolder' -%}
+  {%- assign fonts_font_buttons_weight_bolder = fonts_font_buttons_bolder.weight | default: fonts_weight_adjustment_default -%}
+  {{ fonts_font_buttons_bolder | font_face: font_display: fonts_font_buttons_display }}
+  {{ fonts_font_buttons_bolder | font_modify: 'style', 'italic' | font_face: font_display: fonts_font_buttons_display }}
+.gift-card-template {
+  font-family: {{ fonts_font_body_family }};
+  font-style: {{ fonts_font_body_style }};
+  font-weight: {{ fonts_font_body_weight }};
+  margin: 0;
+}
+
+.gift-card-template a {
+  color: {{ settings.theme-primary-color }};
+  text-decoration: none;
+}
+
+.gift-card-template a:hover {
+  color: {{ settings.theme-primary-color }};
+}
+
+.gift-card-template .btn {
+  font-family: {{ fonts_font_buttons_family }};
+  font-style: {{ fonts_font_buttons_style }};
+  font-weight: {{ fonts_font_buttons_weight }};
+  display: inline-block;
+  padding: 1.5em;
+  font-size: 0.875em;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  vertical-align: baseline;
+  background-color: {{ settings.theme-primary-color }};
+  border-radius: 4px;
+  zoom: 1;
+}
+
+.gift-card-template .btn:hover {
+  color: #fff;
+  background-color: {{ settings.theme-primary-color }};
+}
+
+.gift-card-template .wrap {
+  width: 95%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.gift-card-template .wrap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes slideup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px) rotate(10deg);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+  }
+  80% {
+    -webkit-transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-10px);
+  }
+  80% {
+    -webkit-transform: translateY(2px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes container-slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+.gift-card-template header {
+  text-align: center;
+  padding: 3em 0;
+  animation: fadein 0.5s ease-in-out both 0.4s;
+}
+
+.gift-card-template .shop-title {
+  font-family: {{ fonts_font_headings_family }};
+  font-style: {{ fonts_font_headings_style }};
+  font-weight: {{ fonts_font_headings_weight }};
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 2.25em;
+  color: {{ settings.theme-primary-color }};
+}
+
+.gift-card-template .shop-title:hover {
+  color: {{ settings.theme-primary-color }};
+}
+
+.gift-card-template .shop-title img {
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.gift-card-template main {
+  padding-bottom: 3em;
+  animation: slideup 0.8s ease-in-out;
+}
+
+.gift-card-template .gift-card-outer-container {
+  background-color: #34aadc;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+  padding: 1em;
+  animation: container-slide 0.8s ease-in-out;
+}
+
+.gift-card-template .gift-card-inner-container {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  animation: cardslide 0.8s ease-in-out;
+}
+
+.gift-card-template .gift-card-inner-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.gift-card-template .gift-card-header {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 0.75em;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.gift-card-template .gift-card-header h2 {
+  font-family: {{ fonts_font_headings_family }};
+  font-style: {{ fonts_font_headings_style }};
+  font-weight: {{ fonts_font_headings_weight }};
+  float: left;
+  margin: 0.12em 0;
+}
+
+.gift-card-template .gift-card-header .tag {
+  float: right;
+}
+
+.gift-card-template .tag {
+  background-color: {{ settings.theme-primary-color }};
+  padding: 0.5em;
+  padding-bottom: 0.35em;
+  border-radius: 4px;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  line-height: 1;
+}
+
+.gift-card-template .tag.light {
+  background: transparent;
+  color: #bfbfbf;
+  border: 1px solid {{ settings.theme-primary-color }};
+}
+
+.gift-card-template .gift-card-holder {
+  margin: 0.75em;
+  margin-bottom: 1.25em;
+  margin-top: 1.25em;
+  position: relative;
+}
+
+.gift-card-template .gift-card-holder .corner {
+  display: block;
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  z-index: 2;
+}
+
+.gift-card-template .gift-card-holder .corner.top-left {
+  background: url("//cdn.shopify.com/s/assets/gift-card/corner-top-left-1585103bdd46bf1297b88f31bdfce999.png") 0 0 no-repeat;
+  top: -1px;
+  left: -1px;
+}
+
+.gift-card-template .gift-card-holder .corner.bottom-right {
+  background: url("//cdn.shopify.com/s/assets/gift-card/corner-bottom-right-ba899b18631cb91859e186c2cc1c6970.png") 0 0 no-repeat;
+  bottom: -1px;
+  right: -1px;
+}
+
+.gift-card-template .gift-card {
+  position: relative;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.gift-card-template .gift-card:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: block;
+}
+
+.gift-card-template .gift-card img {
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.gift-card-template .gift-card-code-outer {
+  position: absolute;
+  bottom: 1em;
+  text-align: center;
+  width: 100%;
+}
+
+.gift-card-template .gift-card-code-outer.medium {
+  font-size: 0.875em;
+}
+
+.gift-card-template .gift-card-code-outer.small {
+  font-size: 0.75em;
+}
+
+.gift-card-template .gift-card-code-inner {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  background-color: #fff;
+  padding: 0.5em;
+  border-radius: 4px;
+  max-width: 450px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.gift-card-template .gift-card-code-inner strong {
+  font-stylet: {{ fonts_font_body_style }};
+  font-weight: {{ fonts_font_body_weight }};
+  font-size: 1.875em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px dashed #e5e5e5;
+  padding: 0.4em 0.5em;
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  color: #777;
+  line-height: 1;
+}
+
+.gift-card-template .small .gift-card-code-inner {
+  overflow: auto;
+}
+
+.gift-card-template .disabled .gift-card-code-inner strong {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.gift-card-template .gift-card-code-inner span + span {
+  margin-left: 0.25em;
+}
+
+.gift-card-template .gift-card-amount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-size: 2.75em;
+  padding: 0.4em 0.5em;
+}
+
+.gift-card-template .gift-card-amount.medium {
+  font-size: 2.25em;
+}
+
+.gift-card-template .gift-card-amount strong {
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.gift-card-template .tooltip {
+  position: relative;
+}
+
+.gift-card-template .tooltip:hover .tooltip-container {
+  display: block;
+}
+
+.gift-card-template .tooltip-container {
+  display: block;
+  position: absolute;
+  top: -100%;
+  right: 50%;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  animation: popup 0.5s ease-in-out both 0.7s;
+  top: -50%;
+  margin-top: 0.25em;
+}
+
+.gift-card-template .tooltip-triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 5px solid #333;
+  border-top: 5px solid rgba(51, 51, 51, 0.9);
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  margin-left: -5px;
+  margin-bottom: -5px;
+}
+
+.gift-card-template .tooltip-label {
+  display: block;
+  position: relative;
+  right: -50%;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  background: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  min-height: 14px;
+  font-stylet: {{ fonts_font_body_style }};
+  font-weight: {{ fonts_font_body_weight }};
+  font-size: 0.4em;
+  text-decoration: none;
+  line-height: 16px;
+  text-shadow: none;
+  padding: 0.5em 0.75em;
+  margin-left: 0.25em;
+}
+
+.gift-card-template .gift-card-instructions {
+  font-size: 0.875em;
+  text-align: center;
+  color: #999;
+  margin: 0 0.75em 1.5em;
+}
+
+.gift-card-template .gift-card-qr-code {
+  display: block;
+}
+
+.gift-card-template .gift-card-qr-code img {
+  padding: 1.25em;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+  margin: 0 auto 1.25em;
+}
+
+.gift-card-template .gift-card-actions {
+  border-top: 1px solid #f2f2f2;
+  padding: 1.25em 0.75em;
+  text-align: center;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.gift-card-template .action-link {
+  font-size: 0.875em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #bfbfbf;
+  margin-top: 1.75em;
+  position: absolute;
+  left: 1.25em;
+  top: 1.25em;
+}
+
+.gift-card-template .action-link:hover {
+  color: #999;
+}
+
+.gift-card-template .action-link:hover .ico-16 {
+  opacity: 0.4;
+}
+
+.gift-card-template .ico-16 {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  width: 17px;
+  height: 17px;
+  vertical-align: bottom;
+  margin-bottom: -1px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  margin-right: 0.5em;
+  opacity: 0.25;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gift-card-template .ico-16.print {
+  background-image: url("//cdn.shopify.com/s/assets/gift-card/icon-print-164daa1ae32d10d1f9b83ac21b6f2c70.png");
+}
+
+.gift-card-template footer[role='contentinfo'] {
+  padding-bottom: 3em;
+  text-align: center;
+  animation: fadein 0.5s ease-in-out both 0.4s;
+}
+
+.gift-card-template .gift-card-apple-wallet-badge {
+  display: inline-block;
+}
+
+.gift-card-template .gift-card-apple-wallet-badge-image {
+  display: block;
+}
+
+@media screen and (max-width: 580px) {
+  .gift-card-template body {
+    font-size: 12px;
+  }
+  .gift-card-template h2 {
+    font-size: 1.5em;
+  }
+  .gift-card-template .gift-card-outer-container {
+    padding: 0.5em;
+  }
+  .gift-card-template .tooltip-container {
+    top: -65%;
+  }
+  .gift-card-template .gift-card-actions .btn {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.125em;
+  }
+  .gift-card-template .action-link {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    font-size: 1.125em;
+    display: none;
+  }
+  .gift-card-template .action-link + .action-link {
+    margin-left: 1.5em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .gift-card-template h2 {
+    font-size: 1.25em;
+  }
+  .gift-card-template .gift-card {
+    font-size: 10px;
+  }
+  .gift-card-template .gift-card-holder .corner {
+    display: none;
+  }
+  .gift-card-template .gift-card-holder .corner.bottom-right {
+    background-position: bottom right !important;
+  }
+  .gift-card-template .gift-card-amount strong {
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+  .gift-card-template .tooltip-container {
+    top: -75%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .gift-card-template .shop-title {
+    max-height: 100px;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  .gift-card-template .shop-title {
+    max-height: 80px;
+  }
+  .gift-card-template header {
+    padding: 2em 0;
+  }
+  .gift-card-template footer[role='contentinfo'],
+  .gift-card-template main {
+    padding-bottom: 2em;
+  }
+}
+
+@media print {
+  @page {
+    .gift-card-template {
+      margin: 0.5cm;
+    }
+  }
+  .gift-card-template p,
+  .gift-card-template h2,
+  .gift-card-template h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  .gift-card-template h2,
+  .gift-card-template h3 {
+    page-break-after: avoid;
+  }
+  .gift-card-template body {
+    background-color: #fff;
+  }
+  .gift-card-template .gift-card-actions,
+  .gift-card-template .gift-card-holder .corner,
+  .gift-card-template .tooltip-container,
+  .gift-card-template .gift-card:before {
+    display: none;
+  }
+  .gift-card-template .gift-card-code-inner strong {
+    color: #555;
+  }
+  .gift-card-template .gift-card-amount .tooltip {
+    color: #fff !important;
+  }
+  .gift-card-template .shop-title {
+    color: #58686f;
+  }
+  .gift-card-template .gift-card-outer-container,
+  .gift-card-template .gift-card-inner-container,
+  .gift-card-template .gift-card-code-inner,
+  .gift-card-template .gift-card:before {
+    box-shadow: none;
+  }
+}

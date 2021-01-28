@@ -705,3 +705,43 @@ a.icon-arrow-right {
   border: 4px solid black;
   border-radius: 7px;
 }
+
+.new-collection {
+  height: 200px;
+  background-color: #FDC532;
+  width: 100%;
+  display: flex;
+
+}
+
+.new-collection--button {
+  width: 100%;
+  
+}
+.new-collection a span {
+  color: #FDC532;
+}
+@keyframes crescendo {
+  0%   {transform: scale(1);}
+  100% {transform: scale(1.2);}
+}
+.new-collection a:hover {
+  transform: scale(1);
+}
+
+.new-collection a {
+    min-width: 150px;
+    max-width: 250px;
+    padding: 15px 40px;
+    margin: auto;
+    animation: crescendo 3s alternate infinite ease-in;
+    color: white;
+    background-color:black ;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+
+ 

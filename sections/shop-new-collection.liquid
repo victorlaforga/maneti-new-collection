@@ -1,0 +1,31 @@
+<div class="new-collection">
+    <a href="{{section.settings.button_url}}"> 
+        shop de <br><span>nieuwe</span> collectie</a>
+</div>
+
+
+{% schema %}
+
+{
+    "name": "Title and product",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title Button"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button link"
+        }
+    ],
+    "presets": [
+        {
+            "name": "New Collection Button", // Make it avaible for the client to drag and drop the section on the homepage
+            "category": "Custom section"
+        }
+    ]
+}
+
+{% endschema %}

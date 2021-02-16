@@ -1,0 +1,110 @@
+<section class="heroVideo">
+    <video autoplay loop muted playsinline id="vid"
+        style="width: 100vw;position: relative;left: 50%;right: 50%;margin-left: -50vw;margin-right: -50vw;">
+        <source id="hvid"
+            src="https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764"
+            type="video/mp4">
+
+    </video>
+    <h2 class="hero-h2 first">#Herbruikbaar</h2>
+    <h2 class="hero-h2 second">#Handsfree</h2>
+    <h2 class="hero-h2 third">#Lifehack</h2>
+    <a href=""></a>
+</section>
+<style>
+    .heroVideo {
+        position: relative;
+        margin-top: -88px;
+    }
+
+    .hero-h2 {
+        text-transform: uppercase;
+        color: white;
+        position: absolute;
+        left: 7.5%;
+        letter-spacing: 1.3px;
+        font-weight: 700;
+        font-size: 20px;
+
+    }
+
+    .hero-h2.first {
+        bottom: 90px;
+
+    }
+
+    .hero-h2.second {
+        bottom: 60px;
+
+    }
+
+    .hero-h2.third {
+        bottom: 30px;
+
+    }
+
+    @media screen and (min-width: 720px) {
+        .heroVideo {
+            margin-top: -125px;
+        }
+    }
+</style>
+<script>
+  const w = window.matchMedia("(max-width: 720px)");
+  const vid = document.getElementById("vid");
+  const source = document.getElementById("hvid");
+  
+  if (w.matches) {
+    vid.pause();
+    source.removeAttribute("src");
+    source.setAttribute("src", "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764");
+    vid.load();
+    vid.play();
+  } else {
+    vid.pause();
+    source.removeAttribute("src");
+    source.setAttribute("src", "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_desktop_ff5e42c2-7023-499a-84dd-7350fac9cd45.mp4?v=1613409142");
+    vid.load();
+    vid.play();
+  }
+
+window.addEventListener("resize", function(){
+  const w = window.matchMedia("(max-width: 720px)");
+  const vid = document.getElementById("vid");
+  const source = document.getElementById("hvid");
+  
+  if (w.matches) {
+    vid.pause();
+    source.src = "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764";
+    vid.load();
+    vid.play();
+  } else {
+    vid.pause();
+    source.src = "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_desktop_ff5e42c2-7023-499a-84dd-7350fac9cd45.mp4?v=1613409142";
+    vid.load();
+    vid.play();
+  }
+});
+  
+</script>
+
+{% schema %}
+
+{
+"name": "Video Hero",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Title Button"
+}
+],
+"presets": [
+{
+"name": "New Hero Video", // Make it avaible for the client to drag and drop the section on the homepage
+"category": "Custom section"
+}
+]
+}
+
+{% endschema %}

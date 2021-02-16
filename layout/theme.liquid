@@ -28,6 +28,10 @@
     <link rel="canonical" href="{{ canonical_url }}" />
   {% endif %}
 
+  {% if template == 'cart' %}
+  <script defer src="{{ 'cart.js' | asset_url }}"></script>
+  {% endif %}
+
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   {{ content_for_header }}
@@ -106,10 +110,39 @@
       window.addEventListener('keydown', handleFirstTab);
     })();
   </script>
-<script src="../assets/custom.js"></script>
+<script>
+  
+ const widthColor = window.matchMedia("(min-width: 720px)");
+$(document).on('scroll', function(){
+    if ( widthColor.matches && $(window).scrollTop() > 20 ) {
+        $('.sticky-header').css('background-color', 'white');
+        $(".header-navigation-link").css("color", "black");
+        $(".header-cart-link").css("color", "black");
+        $(".branding-logo-image"). attr("src", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/rsz_logo_zwart.png?v=1594679098');
+        $(".branding-logo-image"). attr("srcset", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/rsz_logo_zwart.png?v=1594679098');
+//         $('.header-navigation-link').after(function(){
+//     $(this).attr('background-color', 'white');
+// });
+        
+    } else if (widthColor.matches) {
+        $('.sticky-header').css('background-color', 'transparent');
+        $(".header-navigation-link").css("color", "white");
+        $(".header-cart-link").css("color", "white");
+        $(".branding-logo-image"). attr("src", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/logom_98ede5b0-44fd-45e8-8727-342f3a1faa27_200x59.png?v=1613409069');
+        $(".branding-logo-image"). attr("srcset", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/logom_98ede5b0-44fd-45e8-8727-342f3a1faa27_200x59.png?v=1613409069');
+//         $('.header-navigation-link').after(function(){
+//     $(this).attr('background-color','black');
+// });
+      
+    }
+
+});
+
+
+   
+</script>
 
 {% include 'mps-buy-me' %}
 {% render 'preorder-now' %}
-
   </body>
 </html>

@@ -1,17 +1,47 @@
 <section class="heroVideo">
-    <video autoplay loop muted playsinline id="vid"
+    <video preload autoplay loop muted playsinline id="vidMobile"
         style="width: 100vw;position: relative;left: 50%;right: 50%;margin-left: -50vw;margin-right: -50vw;">
         <source id="hvid"
             src="https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764"
             type="video/mp4">
 
     </video>
+    <video preload autoplay loop muted playsinline id="vidDesktop"
+        style="width: 100vw;position: relative;left: 50%;right: 50%;margin-left: -50vw;margin-right: -50vw;">
+        <source id="hvid"
+            src="https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_desktop_ff5e42c2-7023-499a-84dd-7350fac9cd45.mp4?v=1613409142"
+            type="video/mp4">
+
+    </video>
+    <div class="containerButtonHero">
+    <h1 class="titelDesktop">Altijd handsfree.</h1>
+    <a class="button outline" href="/products/maneti-tiktok-pakket">
+        <span>Maneti+ Pakket</span>
+        <span class="icon icon-arrow-right"></span>
+      </a>
+    </div>
     <h2 class="hero-h2 first">#Herbruikbaar</h2>
-    <h2 class="hero-h2 second">#Handsfree</h2>
-    <h2 class="hero-h2 third">#Lifehack</h2>
-    <a href=""></a>
+    <h2 class="hero-h2 second">#Simpel</h2>
+    <h2 class="hero-h2 third">#Krachtig</h2>
+ 
 </section>
 <style>
+
+    .titelDesktop {
+        font-size: 35px;
+        color: white;
+        margin-bottom: 15px;
+    }
+    .containerButtonHero {
+        position: absolute;
+        top: 45%;
+        right: 7.5%;
+    }
+    .containerButtonHero a {
+        background-color: #FDC532;
+        border-color: #FDC532;
+        color: white;
+    }
     .heroVideo {
         position: relative;
         margin-top: -88px;
@@ -23,8 +53,8 @@
         position: absolute;
         left: 7.5%;
         letter-spacing: 1.3px;
-        font-weight: 700;
-        font-size: 20px;
+        font-weight: 400;
+        font-size: 18px;
 
     }
 
@@ -42,49 +72,72 @@
         bottom: 30px;
 
     }
-
+    #vidMobile {
+        display: block;
+    }
+    #vidDesktop {
+        display: none;
+    }
+@media screen and (max-width: 720px) {
+    .containerButtonHero {
+        position: absolute;
+        top: 80%;
+        left: 7.5%;
+        display: none;
+        
+    }
+   
+   
+}
     @media screen and (min-width: 720px) {
         .heroVideo {
             margin-top: -125px;
         }
+        #vidDesktop {
+            display: block;
+        }
+        #vidMobile {
+            display: none;
+        }
+    
     }
 </style>
 <script>
-  const w = window.matchMedia("(max-width: 720px)");
-  const vid = document.getElementById("vid");
-  const source = document.getElementById("hvid");
+//   const w = window.matchMedia("(max-width: 720px)");
+//   const vid = document.getElementById("vid");
+//   const source = document.getElementById("hvid");
   
-  if (w.matches) {
-    vid.pause();
-    source.removeAttribute("src");
-    source.setAttribute("src", "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764");
-    vid.load();
-    vid.play();
-  } else {
-    vid.pause();
-    source.removeAttribute("src");
-    source.setAttribute("src", "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_desktop_ff5e42c2-7023-499a-84dd-7350fac9cd45.mp4?v=1613409142");
-    vid.load();
-    vid.play();
-  }
+//   if (w.matches) {
+//     vid.pause();
+//     source.removeAttribute("src");
+//     source.setAttribute("src", "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764");
+//     vid.load();
+//     vid.play();
+//   } else {
+//     vid.pause();
+//     source.removeAttribute("src");
+//     source.setAttribute("src", "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_desktop_ff5e42c2-7023-499a-84dd-7350fac9cd45.mp4?v=1613409142");
+//     vid.load();
+//     vid.play();
+//   }
 
-window.addEventListener("resize", function(){
-  const w = window.matchMedia("(max-width: 720px)");
-  const vid = document.getElementById("vid");
-  const source = document.getElementById("hvid");
+// window.addEventListener("resize", function(){
+//   const w = window.matchMedia("(max-width: 720px)");
+//   const vid = document.getElementById("vid");
+//   const source = document.getElementById("hvid");
   
-  if (w.matches) {
-    vid.pause();
-    source.src = "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764";
-    vid.load();
-    vid.play();
-  } else {
-    vid.pause();
-    source.src = "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_desktop_ff5e42c2-7023-499a-84dd-7350fac9cd45.mp4?v=1613409142";
-    vid.load();
-    vid.play();
-  }
-});
+//   if (w.matches) {
+//     vid.pause();
+//     source.src = "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_Compressed.mp4?v=1613406764";
+//     vid.load();
+//     vid.play();
+//   } else {
+//     vid.pause();
+//     source.src = "https://cdn.shopify.com/s/files/1/0424/0982/0320/files/Maneti_desktop_ff5e42c2-7023-499a-84dd-7350fac9cd45.mp4?v=1613409142";
+//     vid.load();
+//     vid.play();
+//   }
+// });
   
 </script>
 

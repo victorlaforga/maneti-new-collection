@@ -74,7 +74,7 @@ style="background-image: url('{{ placeholder_background_image }}');"
 <div class="list-item product-list-item {{ list_style }}" id="product-list-item-{{ item.id }}" data-product-item>
   {% for tag in item.tags %}
   {% if tag contains 'new' %}
-  <p style="z-index: 5;height: fit-content;padding: 5px 20px;" class="newButton choiceButton">NIEUW!</p>
+  <p style="z-index: 5;height: fit-content;" class="newButton choiceButton productListButton">NIEUW!</p>
   {% endif %}
   {% endfor %}
   <a class="list-container" href="{{ item_url }}">

@@ -2,6 +2,7 @@
 <html class="no-js no-touch" lang="{{ shop.locale }}">
 
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -100,6 +101,12 @@
 
   {% render 'structured-data' %}
   <script>
+    const vid = document.getElementById("vidMobile");
+vid.autoplay = true;
+vid.load();
+
+  </script>
+  <script>
     (function () {
       function handleFirstTab(e) {
         if (e.keyCode === 9) { // the "I am a keyboard user" key
@@ -110,29 +117,49 @@
       window.addEventListener('keydown', handleFirstTab);
     })();
   </script>
+    {% if template.name != "index" %} 
+    <script>
+       
+           $(".icon-menu").css("color", "black");
+           
+   
+           $('.sticky-header').css('background-color', 'white');
+           $(".header-navigation-link").css("color", "black");
+           $(".header-cart-link").css("color", "black");
+           $(".branding-logo-image"). attr("src", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/rsz_logo_zwart.png?v=1594679098');
+           $(".branding-logo-image"). attr("srcset", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/rsz_logo_zwart.png?v=1594679098');
+           $('.header-navigation-link').after(function(){
+       $(this).attr('background-color', 'white');
+   });
+    </script> 
+   {% endif %}
+{% if template.name == "index" %} 
 <script>
   
- const widthColor = window.matchMedia("(min-width: 720px)");
+
 $(document).on('scroll', function(){
-    if ( widthColor.matches && $(window).scrollTop() > 20 ) {
+    if ($(window).scrollTop() > 20) {
         $('.sticky-header').css('background-color', 'white');
         $(".header-navigation-link").css("color", "black");
         $(".header-cart-link").css("color", "black");
         $(".branding-logo-image"). attr("src", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/rsz_logo_zwart.png?v=1594679098');
         $(".branding-logo-image"). attr("srcset", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/rsz_logo_zwart.png?v=1594679098');
-//         $('.header-navigation-link').after(function(){
-//     $(this).attr('background-color', 'white');
-// });
+        $('.header-navigation-link').after(function(){
+    $(this).attr('background-color', 'white');
+});
+$(".icon-menu").css("color", "black");
         
-    } else if (widthColor.matches) {
+    } else
+     {
         $('.sticky-header').css('background-color', 'transparent');
         $(".header-navigation-link").css("color", "white");
         $(".header-cart-link").css("color", "white");
         $(".branding-logo-image"). attr("src", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/logom_98ede5b0-44fd-45e8-8727-342f3a1faa27_200x59.png?v=1613409069');
         $(".branding-logo-image"). attr("srcset", '//cdn.shopify.com/s/files/1/0424/0982/0320/files/logom_98ede5b0-44fd-45e8-8727-342f3a1faa27_200x59.png?v=1613409069');
-//         $('.header-navigation-link').after(function(){
-//     $(this).attr('background-color','black');
-// });
+        $('.header-navigation-link').after(function(){
+    $(this).attr('background-color','black');
+});
+$(".icon-menu").css("color", "white");
       
     }
 
@@ -141,6 +168,8 @@ $(document).on('scroll', function(){
 
    
 </script>
+{% endif %}
+
 
 {% include 'mps-buy-me' %}
 {% render 'preorder-now' %}

@@ -565,3 +565,118 @@ a.icon-arrow-right {
   max-width: 750px;
   margin: 20px auto 0px auto;
 }
+
+// Start of video header
+
+.titelDesktop {
+  font-size: 35px;
+  color: white;
+  margin-bottom: 15px;
+}
+.containerButtonHero {
+  position: absolute;
+  top: 45%;
+  right: 7.5%;
+}
+.containerButtonHero a {
+  background-color: #FDC532;
+  border-color: #FDC532;
+  color: white;
+}
+.heroVideo {
+  position: relative;
+  margin-top: -88px;
+}
+
+.hero-h2 {
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  left: 7.5%;
+  letter-spacing: 1.3px;
+  font-weight: 400;
+  font-size: 18px;
+
+}
+
+.video__loading {
+  display: none;
+}
+
+.heroVideo__loader {
+  background: #313236;
+  width: 100vw;
+  height: 100vh;
+}
+
+.heroVideo__loader-shimmer {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+  background: #50535a;
+  background-image: linear-gradient(to right, #50535a 0%, #656871 20%, #50535a 40%, #50535a 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  position: relative
+}
+
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+      background-position: -468px 0
+  }
+  100% {
+      background-position: 468px 0
+  }
+}
+
+.hero-h2.first {
+  bottom: 90px;
+
+}
+
+.hero-h2.second {
+  bottom: 60px;
+
+}
+
+.hero-h2.third {
+  bottom: 30px;
+
+}
+#vidMobile {
+  display: block;
+  object-fit: cover;
+}
+#vidDesktop {
+  display: none;
+  object-fit: cover;
+}
+@media screen and (max-width: 720px) {
+.containerButtonHero {
+  position: absolute;
+  top: 80%;
+  left: 7.5%;
+  display: none;
+  
+}
+
+
+}
+@media screen and (min-width: 720px) {
+  .heroVideo {
+      margin-top: -125px;
+  }
+  #vidDesktop {
+      display: block;
+  }
+  #vidMobile {
+      display: none;
+  }
+
+}
+
+//end of video header
